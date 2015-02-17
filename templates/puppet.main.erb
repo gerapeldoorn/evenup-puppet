@@ -12,7 +12,9 @@
     # Where SSL certificates are kept.
     # The default value is '$confdir/ssl'.
     ssldir = $vardir/ssl
-
+<% if @basemodulepath -%>
+    basemodulepath = <%= @basemodulepath %>
+<% end -%>
     environmentpath = $confdir/environments
 
     trusted_node_data = true
@@ -25,4 +27,3 @@
     use_srv_records = true
     srv_domain = <%= @srv_domain %>
 <% end -%>
-

@@ -31,6 +31,8 @@ class puppet::server::install (
   # Set up environments
   file { '/etc/puppet/environments':
     ensure => 'directory',
+    owner  => 'puppet',
+    group  => 'puppet',
     mode   => '0755',
   }
 

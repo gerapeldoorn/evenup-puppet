@@ -2,8 +2,9 @@
     # Puppet 4 defaults
     trusted_node_data = true
     immutable_node_data = true
-    parser = future
-
+<% if @parser -%>
+    parser = <%= @parser %>
+<% end -%>
 <% if @dns_alt_names -%>
     dns_alt_names = <%= @dns_alt_names %>
 <% end -%>

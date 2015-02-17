@@ -26,6 +26,8 @@ class puppet (
   $server_reports         = $::puppet::params::server_reports,
   $server_ruby_paths      = $::puppet::params::server_ruby_paths,
   $server_version         = $::puppet::params::server_version,
+  $parser                 = $::puppet::params::parser,
+  $basemodulepath         = undef,
 ) inherits puppet::params {
 
   validate_bool($use_srv_records)

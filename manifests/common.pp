@@ -21,6 +21,10 @@ class puppet::common(
 
   concat { '/etc/puppet/puppet.conf':
     ensure => $ensure,
+    notify => defined(Service['puppetserver']) ? {
+      true  => Service['puppetserver'],
+      false => undef,
+    },
   }
 
   concat::fragment { 'puppet_main':
